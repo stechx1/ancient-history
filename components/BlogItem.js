@@ -8,9 +8,9 @@ const BlogItem = ({ image, heading, para, date, seen, timeOfPost }) => {
     const handleClick = () => {
         router.push({
           pathname: `/blog/${heading}`,
-          query: {
-              fbclid: 'fbclid',
-          }
+          // query: {
+          //     fbclid: 'fbclid',
+          // }
       })
     }
     return (
