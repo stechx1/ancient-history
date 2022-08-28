@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from 'react'
 import { useRouter } from "next/router";
 import Aside from '../components/Admin/Aside'

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../Config/Firebase";
+import { auth } from "../../config/FirebaseConfig";
 import { GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import styles from "./auth.module.css";
 import { useRouter } from "next/router";

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import styles from '../styles/Blog.module.css'
 import { useRouter } from 'next/router'
@@ -6,16 +7,11 @@ const BlogItem = ({ image, heading, para, date, seen, timeOfPost }) => {
     const router = useRouter();
     const handleClick = () => {
         router.push({
-            pathname: '/blogpost',
-            query: {
-                image: image,
-                heading: heading,
-                para: para,
-                date: date,
-                seen: seen,
-                timeOfPost: timeOfPost
-            }
-        })
+          pathname: `/blog/${heading}`,
+          query: {
+              fbclid: 'fbclid',
+          }
+      })
     }
     return (
         <>
