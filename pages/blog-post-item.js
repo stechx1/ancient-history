@@ -19,6 +19,7 @@ const BlogPostItem = () => {
                         <span className={styles.pHeading}>{router.query.title}</span>
                         <div className='gap-4 d-flex flex-column'>
                             <p dangerouslySetInnerHTML={{__html: router.query.para}}></p>
+                            <p dangerouslySetInnerHTML={{__html: router.query.slug}}></p>
                         </div>
                         <hr />
                     </div>

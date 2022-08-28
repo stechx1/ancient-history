@@ -22,6 +22,9 @@ const Blogpost = ({postItem, meta}) => {
             <p dangerouslySetInnerHTML={{__html: postItem.content}}>
             
             </p>
+            <p>
+            {postItem.slug}
+            </p>
           </div>
           <hr />
         </div>

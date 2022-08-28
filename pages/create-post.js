@@ -26,7 +26,7 @@ const CreatePost = () => {
         });
       });
     //Post Related
-    const [data, setData] = useState({ title: '', content: '', redirect: '' })
+    const [data, setData] = useState({ title: '', content: '', redirect: '', slug:'' })
     const onChange = (e) => {
         setData({ ...data, [e.target.name]: e.target.value })
     }
@@ -57,6 +57,7 @@ const CreatePost = () => {
             content: data.content,
             redirect: data.redirect,
             postImage: downloadURI,
+            slug:data.slug,
             date: d.toString()
         })
             .then(() => {
@@ -88,6 +89,7 @@ const CreatePost = () => {
                 <div className={`${styles.right} w-100 d-flex gap-5 px-3`}>
                     <div className={`d-flex flex-column gap-4 ${styles.upper} `}>
                         <input onChange={onChange} type="text" name="title" id="title" placeholder='Enter title here' />
+                        <input onChange={onChange} type="text" name="slug" id="slug" placeholder='Enter slug here' />
                         <textarea onChange={onChange} name="content" id="content" rows="20" placeholder='Enter post'></textarea>
                     </div>
                     <div className={`d-flex flex-column justify-content-around ${styles.lower} `}>

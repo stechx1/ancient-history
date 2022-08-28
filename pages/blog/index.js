@@ -11,7 +11,7 @@ const Blog = ({posts}) => {
                 <div className="container">
                     <div className="row">
                         {posts.map((post, index)=> <div key={index} className="col-md-4 col-sm-12">
-                            <BlogItem image={post.postImage} heading={post.postTitle} para={post.content} date={post.date.slice(0, 16)} />
+                            <BlogItem slug={post.slug} image={post.postImage} heading={post.postTitle} para={post.content} date={post.date.slice(0, 16)} />
                         </div>  )}
                     </div>
                 </div>
@@ -27,12 +27,13 @@ export const getServerSideProps = async(ctx) => {
     const postItems = [];
     const querySnapshot = await getDocs(collection(db, "posts"));
     querySnapshot.forEach((doc) => {
-      const { content, postImage, redirect, title, date } = doc.data();
+      const { content, postImage, redirect, title, date, slug } = doc.data();
       postItems.push({
         postTitle:title,
         content:content,
         postImage:postImage,
         redirect:redirect,
+        slug:slug,
         date:date
       });
     });
