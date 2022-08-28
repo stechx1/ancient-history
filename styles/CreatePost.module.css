@@ -1,0 +1,85 @@
+.thumbnail{
+    padding: 35px;
+    border: 2px solid black;
+    /* margin: 23px 0; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-style: dashed;
+    cursor: pointer;
+}
+.hiddenInput{
+    visibility: hidden;
+}
+.right{
+    margin: 95px 0;
+}
+
+.right input{
+    /* background-color: #fff; */
+    background-color: rgb(249 250 251/1);
+
+    border-color: #b3b3b3;
+    line-height: 1.25rem;
+    color: rgb(17 24 39);
+    border-radius: 7px 7px 7px 7px;
+    border: 1px solid #818a91;
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    min-height: 48px;
+    /* color: #777385; */
+    font-weight: 500;
+}
+.right textarea{
+    /* background-color: #fff; */
+    line-height: 1.25rem;
+    color: rgb(17 24 39);
+    background-color: rgb(249 250 251/1);
+
+    border-color: #b3b3b3;
+    border-radius: 7px 7px 7px 7px;
+    
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+    /* color: #777385; */
+    font-weight: 500;
+    resize: none 
+}
+.right input:focus{
+    outline: none;
+}
+.right textarea{
+    outline: none;
+}
+.left{
+    width: 25%;
+}
+.upper{
+    width: 75%;
+}
+.lower{
+    width: 25%;
+}
+
+@media (max-width:500px){
+    .mainContainer{
+        flex-direction: column;
+    }
+    .mainContainer .left{
+        width: 100%
+    };
+}
+
+
+@media (max-width:400px){
+   .right{
+    flex-direction: column;
+   }
+   .upper{
+    width: 100%;
+}
+.lower{
+    width: 100%;
+}
+}

@@ -1,0 +1,80 @@
+.formContainer {
+  height: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.Label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25rem;
+  color: rgb(17 24 39);
+}
+.inp {
+  background-color: rgb(249 250 251/1);
+  border-color: rgb(209 213 219 /1);
+  font-size: 16px;
+  line-height: 1.25rem;
+  color: rgb(17 24 39);
+  border-radius: 0.5rem;
+  border-width: 1px;
+  padding: 0.625rem;
+  display: block;
+  width: 100%;
+}
+
+.inp:focus {
+  border-color: rgb(59 130 246);
+}
+
+.btn {
+  color: rgb(255 255 255);
+  background-color: rgb(29 78 216);
+  font-weight: 500;
+  border-radius: 0.5rem;
+  font-size: 16px;
+  width: 100%;
+  line-height: 1.25rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: rgb(30 64 175);
+}
+
+.btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-color: rgb(147 197 253);
+}
+
+@media (min-width: 640px) {
+  .btn {
+    width: auto;
+  }
+}
+
+.signInGoogleButton {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.link {
+  text-decoration: underline;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
