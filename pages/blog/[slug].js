@@ -7,7 +7,7 @@ import Head from 'next/head';
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 
-const Blogpost = ({postItem, meta}) => {
+const Blogpost = ({postItem}) => {
   return (
     <>
     <Head>
@@ -39,8 +39,8 @@ export const getServerSideProps = async(ctx) => {
   let postItem = {};
 
   try {
-    const titleQuery = collection(db, "posts");
-    const q = query(titleQuery, where("title", "==", ctx.query["post-title"]));
+    const slugQuery = collection(db, "posts");
+    const q = query(slugQuery, where("slug", "==", ctx.query.slug));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
       postItem = doc.data();
@@ -68,7 +68,7 @@ const meta = {
 };
 
 return {
-  props: {refer: ctx.req.headers, postItem, meta}
+  props: {refer: ctx.req.headers, postItem}
   }
 }
 
