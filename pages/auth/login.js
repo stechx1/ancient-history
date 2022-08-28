@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../../Config/FirebaseConfig";
+import { auth } from "../../config/FirebaseConfig";
 import { useRouter } from "next/router";
 import styles from "./auth.module.css";
 import Alert from "../../components/Modal/Alert";
