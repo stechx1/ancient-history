@@ -2,17 +2,18 @@
 import React, { useEffect, useState } from 'react'
 import styles from '../../styles/BlogPost.module.css'
 import { db } from '../../config/FirebaseConfig'
+import Head from 'next/head';
 // import { getDocs, collection, where, query } from 'firebase/firestore'
 import { collection, query, where, getDocs } from "firebase/firestore";
 
 
-const Blogpost = ({postItem}) => {
-  const [item, setItem] = useState({});
-
-  console.log(postItem)
-
+const Blogpost = ({postItem, meta}) => {
   return (
     <>
+    <Head>
+        <title>{postItem.title}</title>
+        <meta property="og:title" content={postItem.title} />
+      </Head>
       <div className={styles.mainContainer}>
         <div className={`container d-flex flex-column gap-4 ${styles.blogPostContainer} `}>
           <img src={postItem.postImage} className="img-fluid" alt="thumbnail" />
@@ -58,8 +59,13 @@ export const getServerSideProps = async(ctx) => {
   };
 }
 
+const meta = {
+  description: '',
+  title: postItem.title,
+};
+
 return {
-  props: {refer: ctx.req.headers, postItem}
+  props: {refer: ctx.req.headers, postItem, meta}
   }
 }
 
