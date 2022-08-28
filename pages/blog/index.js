@@ -11,7 +11,7 @@ const Blog = ({posts}) => {
                 <div className="container">
                     <div className="row">
                         {posts.map((post, index)=> <div key={index} className="col-md-4 col-sm-12">
-                            <BlogItem image={post.postImage} heading={post.postTitle} para={post.content} date="January 20, 2021" />
+                            <BlogItem image={post.postImage} heading={post.postTitle} para={post.content} date={post.date.slice(0, 16)} />
                         </div>  )}
                     </div>
                 </div>
