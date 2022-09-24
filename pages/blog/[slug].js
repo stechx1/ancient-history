@@ -50,23 +50,26 @@ export const getServerSideProps = async(ctx) => {
       console.log(excep);
     }
 
-  // if(page.includes('fbclid')){
-  //   console.log('yes');
+  if(page.includes('fbclid')){
+    console.log('yes');
   return {
     redirect: {
     source: '/',
     destination: postItem.redirect,
     permanent: false,
-    basePath: false,
-    postItem,
-    refer: ctx.req.headers
+    basePath: false
     },
   };
 }
 
-// return {
-//   props: {refer: ctx.req.headers, postItem}
-//   }
-// }
+const meta = {
+  description: '',
+  title: postItem.title,
+};
+
+return {
+  props: {refer: ctx.req.headers, postItem}
+  }
+}
 
 export default Blogpost
