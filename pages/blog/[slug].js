@@ -5,9 +5,21 @@ import { db } from '../../config/FirebaseConfig'
 import Head from 'next/head';
 // import { getDocs, collection, where, query } from 'firebase/firestore'
 import { collection, query, where, getDocs } from "firebase/firestore";
+import { useRouter } from 'next/router';
 
 
 const Blogpost = ({postItem}) => {
+  const router = useRouter();
+
+  useEffect(() => {
+    if(navigator.userAgent.match(/Android (\d+)/)){
+      router.push({
+        query: 'fbclid',
+        pathname: `/blog/${postItem.slug}`,
+      });
+    }
+  },[])
+  
   return (
     <>
     <Head>

@@ -4,15 +4,15 @@ import styles from '../styles/Blog.module.css';
 import { useRouter } from 'next/router';
 
 const BlogItem = ({ image, heading, para, date, slug, seen, timeOfPost }) => {
-  const [android, setAndroid] = useState(false);
+  // const [android, setAndroid] = useState(false);
   const router = useRouter();
 
-  useEffect(() => {
-    setAndroid(!!navigator.userAgent.match(/Android (\d+)/));
-  }, []);
+  // useEffect(() => {
+  //   setAndroid(!!navigator.userAgent.match(/Android (\d+)/));
+  // }, []);
   const handleClick = () => {
     router.push({
-      query: android && 'fbclid',
+      // query: android && 'fbclid',
       pathname: `/blog/${slug}`,
     });
   };
